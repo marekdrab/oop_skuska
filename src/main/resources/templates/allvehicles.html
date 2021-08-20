@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of vehicles</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th class="mdl-data-table__cell--non-numeric">TYPE</th>
+        <th class="mdl-data-table__cell--non-numeric">ID</th>
+        <th class="mdl-data-table__cell--non-numeric">NAME</th>
+        <th class="mdl-data-table__cell--non-numeric">NATIONALITY</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="vehicle: ${vehicles1.values()}">
+        <td th:text="Artillery"></td>
+        <td th:text="${vehicle.id}"></td>
+        <td th:text="${vehicle.name}"></td>
+        <td th:text="${vehicle.nationality}"></td>
+        <td><a th:href="@{'/vehicledetail/'+${vehicle.id}}" >vehicle detail</a></td>
+    </tr>
+    <tr th:each="vehicle: ${vehicles2.values()}">
+        <td th:text="LightTank"></td>
+        <td th:text="${vehicle.id}"></td>
+        <td th:text="${vehicle.name}"></td>
+        <td th:text="${vehicle.nationality}"></td>
+        <td><a th:href="@{'/vehicledetail/'+${vehicle.id}}" >vehicle detail</a></td>
+    </tr>
+    <tr th:each="vehicle: ${vehicles3.values()}">
+        <td th:text="HeavyTank"></td>
+        <td th:text="${vehicle.id}"></td>
+        <td th:text="${vehicle.name}"></td>
+        <td th:text="${vehicle.nationality}"></td>
+        <td><a th:href="@{'/vehicledetail/'+${vehicle.id}}" >vehicle detail</a></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{'/allcomponents/'}" >all components</a>
+</body>
+</html>

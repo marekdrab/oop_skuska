@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of vehicles</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th class="mdl-data-table__cell--non-numeric">TYPE</th>
+        <th class="mdl-data-table__cell--non-numeric">ID</th>
+        <th class="mdl-data-table__cell--non-numeric">NAME</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="component: ${components1.values()}">
+        <td th:text="BeltChassis"></td>
+        <td th:text="${component.id}"></td>
+        <td th:text="${component.name}"></td>
+        <td><a th:href="@{'/componentdetail/'+${component.id}}" >component detail</a></td>
+    </tr>
+    <tr th:each="component: ${components2.values()}">
+        <td th:text="WheelChassis"></td>
+        <td th:text="${component.id}"></td>
+        <td th:text="${component.name}"></td>
+        <td><a th:href="@{'/componentdetail/'+${component.id}}" >component detail</a></td>
+    </tr>
+    <tr th:each="component: ${components3.values()}">
+        <td th:text="LightGun"></td>
+        <td th:text="${component.id}"></td>
+        <td th:text="${component.name}"></td>
+        <td><a th:href="@{'/componentdetail/'+${component.id}}" >component detail</a></td>
+    </tr>
+    <tr th:each="component: ${components4.values()}">
+        <td th:text="HeavyGun"></td>
+        <td th:text="${component.id}"></td>
+        <td th:text="${component.name}"></td>
+        <td><a th:href="@{'/componentdetail/'+${component.id}}" >component detail</a></td>
+    </tr>
+    <tr th:each="component: ${components5.values()}">
+        <td th:text="LightTower"></td>
+        <td th:text="${component.id}"></td>
+        <td th:text="${component.name}"></td>
+        <td><a th:href="@{'/componentdetail/'+${component.id}}" >component detail</a></td>
+    </tr>
+    <tr th:each="component: ${components6.values()}">
+        <td th:text="HeavyTower"></td>
+        <td th:text="${component.id}"></td>
+        <td th:text="${component.name}"></td>
+        <td><a th:href="@{'/componentdetail/'+${component.id}}" >component detail</a></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{'/'}" >all vehicles</a>
+
+</body>
+</html>
